@@ -1,14 +1,90 @@
 @font-face {
-  font-family: 'Forum';
-  src: url(./assets/fonts/Forum-Regular.ttf);
+  font-family: Forum;
+  src: url(assets/fonts/Forum-Regular.ttf);
+}
+
+ul li {
+  display: inline;
+  list-style-type: none;
 }
 
 :root {
-  --main-bg-dark: #eee;
-  --main-font-secondary: 'Forum', cursive;
+  --main-bg-dark: #030303;
+  --main-bg-white: #fff;
+  --main-font-primary: Roboto, sans-serif;
+  --main-font-secondary: Forum;
+  --main-font-size-xl: 80px;
+  --main-font-size-l: 32px;
+  --main-font-size-md: 28px;
+  --main-font-size-sm: 22px;
+  --main-font-size-xs: 18px;
 }
 
-body {
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head__logo {
+  display: flex;
+  align-items: baseline;
+}
+
+.head__nav {
+  display: flex;
+  align-items: center;
+}
+
+.head__title {
+  color: var(--main-bg-white);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.nav__item {
+  padding-left: 24px;
+  font-family: var(--main-font-primary);
+  font-size: var(--main-font-size-sm);
+  font-weight: 100;
+  line-height: 50px;
+  color: var(--main-bg-white);
+  letter-spacing: 2px;
+}
+
+.section_dark {
   background-color: var(--main-bg-dark);
+}
+
+.welcome__wall {
+  max-width: 1920px;
+  height: 715px;
+  margin: 0 auto;
+  background-image: url(assets/img/louvre-wall.jpg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 1215px;
+}
+
+.welcome__text {
+  padding-top: 200px;
   font-family: var(--main-font-secondary);
+  font-size: var(--main-font-size-xl);
+  line-height: 90px;
+  color: var(--main-bg-white);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.welcome__more {
+  font-family: var(--main-font-primary);
+  font-size: var(--main-font-size-md);
+  font-weight: 300;
+  line-height: 33px;
+  color: var(--main-bg-white);
+  letter-spacing: 2px;
 }
