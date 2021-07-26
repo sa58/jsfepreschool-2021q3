@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Forum';
+  src: url(./assets/fonts/Forum-Regular.ttf);
+}
+
+:root {
+  --main-bg-dark: #eee;
+  --main-font-secondary: 'Forum', cursive;
+}
+
+body {
+  background-color: var(--main-bg-dark);
+  font-family: var(--main-font-secondary);
+}
