@@ -11,6 +11,8 @@ ul li {
 :root {
   --main-bg-dark: #030303;
   --main-bg-white: #fff;
+  --main-bg-gold: #9d8665;
+  --main-color-dark-red: #710707;
   --main-font-primary: Roboto, sans-serif;
   --main-font-secondary: Forum;
   --main-font-size-xl: 80px;
@@ -23,6 +25,16 @@ ul li {
 .container {
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.section_dark {
+  background-color: var(--main-bg-dark);
+}
+
+/* ========================= page-header */
+
+.page-header {
+  padding: 74px 0;
 }
 
 .head {
@@ -41,13 +53,19 @@ ul li {
 }
 
 .head__title {
+  /* padding-left: 20px; */
+  column-gap: 20px;
+  font-family: var(--main-font-secondary);
+  font-weight: normal;
+  font-size: var(--main-font-size-md);
+  line-height: 50px;
   color: var(--main-bg-white);
   text-transform: uppercase;
   letter-spacing: 5px;
 }
 
 .nav__item {
-  padding-left: 24px;
+  padding-left: 76px;
   font-family: var(--main-font-primary);
   font-size: var(--main-font-size-sm);
   font-weight: 100;
@@ -56,13 +74,11 @@ ul li {
   letter-spacing: 2px;
 }
 
-.section_dark {
-  background-color: var(--main-bg-dark);
-}
+/* ========================= welcome */
 
 .welcome__wall {
   max-width: 1920px;
-  height: 715px;
+  height: 750px;
   margin: 0 auto;
   background-image: url(assets/img/louvre-wall.jpg);
   background-position: right;
@@ -70,14 +86,25 @@ ul li {
   background-size: 1215px;
 }
 
-.welcome__text {
-  padding-top: 200px;
+.welcome__block {
+  padding-top: 115px;
+  padding-bottom: 28px;
+}
+
+.section__title {
   font-family: var(--main-font-secondary);
   font-size: var(--main-font-size-xl);
   line-height: 90px;
-  color: var(--main-bg-white);
   text-transform: uppercase;
   letter-spacing: 5px;
+}
+
+.section__title_light {
+  color: var(--main-bg-white);
+}
+
+.section__title_gold {
+  color: var(--main-bg-gold);
 }
 
 .welcome__more {
@@ -87,4 +114,54 @@ ul li {
   line-height: 33px;
   color: var(--main-bg-white);
   letter-spacing: 2px;
+}
+
+/* ========================= visiting */
+
+.visiting__section {
+  padding-top: 76px;
+  padding-bottom: 25px;
+  border-bottom: 3px solid var(--main-color-dark-red);
+}
+
+.visiting__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* column-gap: 60px; */
+  row-gap: 78px;
+  padding-top: 75px;
+}
+
+.visiting__item {
+  text-decoration: none;
+}
+
+.visiting__name {
+  font-family: var(--main-font-secondary);
+  font-size: var(--main-font-size-l);
+  line-height: 35px;
+  color: var(--main-bg-dark);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.visiting__block {
+  padding-top: 25px;
+}
+
+.visiting__how {
+  padding-top: 21px;
+  font-family: var(--main-font-primary);
+  font-size: var(--main-font-size-sm);
+  line-height: 26px;
+  color: var(--main-bg-dark);
+}
+
+.visiting__place {
+  padding-top: 10px;
+  font-family: var(--main-font-primary);
+  font-size: var(--main-font-size-xs);
+  line-height: 21px;
+  color: var(--main-bg-dark);
 }
