@@ -31,6 +31,10 @@ ul li {
   background-color: var(--main-bg-dark);
 }
 
+.section__title_light {
+  color: var(--main-bg-white);
+}
+
 /* ========================= page-header */
 
 .page-header {
@@ -118,6 +122,10 @@ ul li {
 
 /* ========================= visiting */
 
+.visiting {
+  padding-bottom: 75px;
+}
+
 .visiting__section {
   padding-top: 76px;
   padding-bottom: 25px;
@@ -164,4 +172,33 @@ ul li {
   font-size: var(--main-font-size-xs);
   line-height: 21px;
   color: var(--main-bg-dark);
+}
+
+/* ========================= explore */
+
+.explore {
+  padding-bottom: 75px;
+}
+
+.restore {
+  display: flex;
+  padding-top: 75px;
+  column-gap: 61px;
+}
+
+.explore__title {
+  margin-bottom: 103px;
+}
+
+.explore__info {
+  margin-bottom: 25px;
+  font-family: var(--main-font-primary);
+  font-weight: 300;
+  font-size: var(--main-font-size-sm);
+  line-height: 38px;
+  color: var(--main-bg-white);
+}
+
+.restore__example {
+  padding-top: 12px;
 }
