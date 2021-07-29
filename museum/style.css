@@ -27,6 +27,11 @@ ul li {
   margin: 0 auto;
 }
 
+.section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
 .section_dark {
   background-color: var(--main-bg-dark);
 }
@@ -201,4 +206,52 @@ ul li {
 
 .restore__example {
   padding-top: 12px;
+}
+
+/* ========================= journey */
+
+.journey {
+  padding-top: 90px;
+  padding-bottom: 75px;
+}
+
+.journey__intro {
+  display: flex;
+  padding-top: 120px;
+}
+
+.journey__info {
+  align-self: center;
+  font-family: var(--main-font-primary);
+  font-weight: 300;
+  font-size: var(--main-font-size-sm);
+  line-height: 38px;
+}
+
+.journey__info,
+.journey__title {
+  flex-basis: 50%;
+}
+
+/* ========================= tickets */
+
+.tickets__wrap {
+  display: flex;
+  color: white;
+}
+
+.tickets__order {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-between;
+}
+
+.tickets__title {
+  margin-bottom: 104px;
+}
+
+/* ========================= contacts */
+
+.contacts__wrap {
+  display: flex;
 }
