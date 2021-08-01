@@ -1,5 +1,5 @@
 const progress = document.querySelector('.range');
-const progress1 = document.querySelector('.voice-range');
+const progress1 = document.querySelector('.video__volume');
 
 
 progress.addEventListener('input', function() {

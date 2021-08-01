@@ -299,12 +299,16 @@ ul li {
 }
 
 .explore__info {
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   font-family: var(--main-font-primary);
   font-weight: 300;
   font-size: var(--main-font-size-sm);
   line-height: 38px;
   color: var(--main-bg-white);
+}
+
+.explore__info_yellow {
+  color: var(--main-bg-gold);
 }
 
 .restore__example {
@@ -357,37 +361,37 @@ ul li {
 }
 
 .video__btn:hover,
-.video-m1:hover {
+.video__btn_big:hover {
   cursor: pointer;
   filter: var(--main-filter-gold);
 }
 
-.video__prev {
+.video__btn_prev {
   width: 27px;
   height: 30px;
   background-image: url(./assets/svg/prev.svg);
 }
 
-.video__pause {
+.video__btn_pause {
   width: 23px;
   height: 30px;
   background-image: url(./assets/svg/pause.svg);
 }
 
-.video__next {
+.video__btn_next {
   width: 27px;
   height: 30px;
   background-image: url(./assets/svg/next.svg);
 }
 
-.video__voice {
+.video__btn_volume {
   align-self: center;
   width: 38px;
   height: 30px;
   background-image: url(./assets/svg/voice.svg);
 }
 
-.video__full {
+.video__btn_full {
   width: 36px;
   height: 36px;
   background-image: url(./assets/svg/full.svg);
@@ -403,11 +407,11 @@ ul li {
   column-gap: 20px;
 }
 
-.voice-range {
+.video__volume {
   width: 155px;
 }
 
-.state-range {
+.video__progress {
   width: 60%;
 }
 
@@ -420,11 +424,11 @@ ul li {
   -webkit-appearance: none;
 }
 
-.voice-range {
+.video__volume {
   background: linear-gradient(to right, #24809e 0%, #24809e 40%, #c4c4c4 40%, #c4c4c4 100%);
 }
 
-.state-range {
+.video__progress {
   background: linear-gradient(to right, #24809e 0%, #24809e 48%, #c4c4c4 40%, #c4c4c4 100%);
 }
 
@@ -437,16 +441,16 @@ ul li {
   background: var(--main-bg-white);
 }
 
-.video-mock {
+.video__image {
   width: 100%;
   display: block;
 }
 
-.video-m {
+.video__mock {
   position: relative;
 }
 
-.video-m1 {
+.video__btn_big {
   bottom: 0;
   position: absolute;
   background-image: url(./assets/svg/pause-big.svg);
@@ -475,7 +479,7 @@ ul li {
   color: white;
 }
 
-.tickets__order {
+.tickets__type {
   /* display: flex; */
   /* flex-basis: 100%; */
   justify-content: space-between;
@@ -497,8 +501,7 @@ ul li {
   text-align: right;
 }
 
-.types {
-  padding-top: 49px;
+.tickets__item {
   display: block;
   font-family: var(--main-font-primary);
   font-size: var(--main-font-size-sm);
@@ -507,13 +510,17 @@ ul li {
   color: var(--main-bg-white);
 }
 
-.types:hover {
+.tickets__item:hover {
   cursor: pointer;
 }
 
-.tickets__type {
+.tickets__type_align {
   padding-top: 0;
   margin-top: 49px;
+}
+
+.tickets__amount_align {
+  padding-top: 49px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -528,50 +535,50 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.amount-wrap {
+.amount {
   display: flex;
   justify-content: space-between;
   border: 4px solid var(--main-bg-white);
 }
 
-.amount-wrap__input {
+.amount__input {
   text-align: center;
   background-color: transparent;
   color: var(--main-bg-white);
   border: none;
 }
 
-.amount-wrap__btn {
+.amount__btn {
   background-color: transparent;
   color: var(--main-bg-white);
   border: none;
 }
 
-.amount-wrap__item {
+.amount__item {
   font-family: var(--main-font-primary);
   font-weight: 300;
   color: var(--main-bg-white);
 }
 
-.amount-wrap__btn {
+.amount__btn {
   font-size: 32px;
   line-height: 37px;
   transition-property: color;
   transition-duration: 0.8s;
 }
 
-.amount-wrap__btn:hover {
+.amount__btn:hover {
   cursor: pointer;
   color: var(--main-bg-gold);
 }
 
-.amount-wrap__input {
+.amount__input {
   font-size: 22px;
   line-height: 26px;
   outline: none;
 }
 
-.amount-wrap__btn {
+.amount__btn {
   padding: 2px 12px;
 }
 
@@ -579,7 +586,7 @@ input[type=number] {
   margin-bottom: 14px;
 }
 
-.types.tickets__item {
+.tickets__amount_align {
   padding-top: 11px;
   margin-bottom: 25px;
   align-self: flex-end;
@@ -621,7 +628,7 @@ input[type=number] {
   background-color: var(--main-bg-gold);
 }
 
-.wrap11 {
+.tickets__order {
   display: flex;
   justify-content: space-between;
   flex-basis: 100%;
@@ -804,9 +811,3 @@ input[type=number] {
 .check-custom:disabled ~ .check-toggle {
   /* TO-DO */
 }
-
-/* https://itchief.ru/html-and-css/styling-checkbox-and-radio */
-
-/* https://hackernoon.com/hacking-custom-checkboxes-and-radios-5d48230440d */
-
-/* https://pranjaldubey.com/css-filter-generator/ */

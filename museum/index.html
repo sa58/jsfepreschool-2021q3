@@ -136,7 +136,7 @@
               </p>
 
               <p class="explore__info">
-                It was cleaned in 1984 to remove a "yellow veil" of dust that had gathered since the previous restoration in the 19th century.
+                It was cleaned in 1984 to remove a <span class="explore__info_yellow">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.
               </p>
 
               <p class="explore__info">
@@ -155,24 +155,28 @@
 
       <section class="journey" id="journey">
         <div class="container">
-          
+
           <div class="video">
-            <div class="video-m">
-              <img class="video-mock" src="assets/img/video-mock.jpg">
-              <button class="video-m1"></button>
+            <div class="video__mock">
+              <img class="video__image" src="assets/img/video-mock.jpg">
+              <button class="video__btn_big"></button>
             </div>
+
             <div class="video__settings">
               <div class="video__state">
-                <button class="video__btn video__prev"></button>
-                <button class="video__btn video__pause"></button>
-                <button class="video__btn video__next"></button>
+                <button class="video__btn video__btn_prev"></button>
+                <button class="video__btn video__btn_pause"></button>
+                <button class="video__btn video__btn_next"></button>
               </div>
-              <input class="range state-range" type="range" value="47" min="0" max="100" step="1">
+
+              <input class="range video__progress" type="range" value="47" min="0" max="100" step="1">
+
               <div class="voice">
-                <button class="video__btn video__voice"></button>
-                <input class="range voice-range" type="range" value="40" min="0" max="100" step="1">
+                <button class="video__btn video__btn_volume"></button>
+                <input class="range video__volume" type="range" value="40" min="0" max="100" step="1">
               </div>
-              <button class="video__btn video__full"></button>
+
+              <button class="video__btn video__btn_full"></button>
             </div>
 
             <div class="journey__intro">
@@ -186,7 +190,7 @@
 
       <!-- ------------------------------------ tickets -->
 
-      <section class="tickets section section_dark" id="tickets">
+      <section class="tickets section_dark" id="tickets">
         <div class="container">
           <h3 class="tickets__title section__title section__title_light">buy tickets</h3>
 
@@ -194,56 +198,55 @@
 
           <div class="tickets__wrap">
             <img src="assets/img/tickets.jpg">
-            
-            <div class="wrap11">
-              <div class="tickets__order">
+
+            <div class="tickets__order">
+              <div class="tickets__type">
                 <p class="tickets__step">Ticket Type</p>
-                
-                <label class="types tickets__type">
+
+                <label class="tickets__item tickets__type_align">
                   <input type="radio" name="type" class="check-custom">
 
                   <span class="check-toggle"></span>
                   Permanent exhibition
                 </label>
 
-                <label class="types tickets__type">
+                <label class="tickets__item tickets__type_align">
                   <input type="radio" name="type" class="check-custom">
 
                   <span class="check-toggle"></span>
                   Temporary exhibition
                 </label>
-                <label class="types tickets__type">
+                <label class="tickets__item tickets__type_align">
                   <input type="radio" name="type" class="check-custom">
 
                   <span class="check-toggle"></span>
                   Combined Admission
                 </label>
-
               </div>
 
               <div class="tickets__amount">
                 <p class="tickets__step tickets__step_amount">Amount</p>
-                
-                <div class="types tickets__item">
+
+                <div class="tickets__item tickets__amount_align">
                   <p class="age">Basic 18+</p>
-                  <div class="amount-wrap">
-                    <button class="amount-wrap__item amount-wrap__item_minus amount-wrap__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                    <input class="amount-wrap__item amount-wrap__input" type="number" min="0" max="20" value="1" readonly class="number">
-                    <button class="amount-wrap__item amount-wrap__item_plus amount-wrap__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                  <div class="amount">
+                    <button class="amount__item amount__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                    <input class="amount__item amount__input" type="number" min="0" max="20" value="1" readonly class="number">
+                    <button class="amount__item amount__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                   </div>
                 </div>
 
-                <div class="types tickets__item">
+                <div class="tickets__item tickets__amount_align">
                   <p class="age">Senior 65+</p>
-                  <div class="amount-wrap">
-                    <button class="amount-wrap__item amount-wrap__item_minus amount-wrap__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                    <input class="amount-wrap__item amount-wrap__input" type="number" min="0" max="20" value="1" readonly class="number">
-                    <button class="amount-wrap__item amount-wrap__item_plus amount-wrap__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                  <div class="amount">
+                    <button class="amount__item amount__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                    <input class="amount__item amount__input" type="number" min="0" max="20" value="1" readonly class="number">
+                    <button class="amount__item amount__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                   </div>
                 </div>
 
                 <div class="tickets__step tickets__step_amount tickets__step_total">Total €220</div>
-              
+
                 <button class="tickets__btn">Buy Now</button>
               </div>
             </div>
@@ -253,7 +256,7 @@
 
       <!-- ------------------------------------ contacts -->
 
-      <section class="contacts section" id="contacts">
+      <section class="contacts" id="contacts">
         <div class="container">
 
           <h3 class="contacts__title section__title section__title_gold">Contacts</h3>
