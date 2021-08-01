@@ -3,6 +3,10 @@
   src: url(assets/fonts/Forum-Regular.ttf);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
 }
@@ -104,6 +108,7 @@ ul li {
   letter-spacing: 2px;
   transition-property: color;
   transition-duration: 0.8s;
+  text-decoration: none;
 }
 
 .nav__item:hover {
@@ -768,8 +773,8 @@ input[type=number] {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 70%;
-  height: 70%;
+  width: 76%;
+  height: 76%;
   margin: auto;
   position: absolute;
   border-radius: 50%;

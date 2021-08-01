@@ -24,17 +24,20 @@
 
         <nav>
           <ul class="head__nav nav">
-            <li class="nav__item nav__item_pl">Visiting</li>
-            <li class="nav__item nav__item_pl">Explore</li>
-            <li class="nav__item nav__item_pl">Video</li>
-            <li class="nav__item nav__item_pl">Tickets</li>
-            <li class="nav__item nav__item_pl">Contacts</li>
+            <li class="nav__item_pl"><a class="nav__item" href="#visiting">Visiting</a></li>
+            <li class="nav__item_pl"><a class="nav__item" href="#explore">Explore</a></li>
+            <li class="nav__item_pl"><a class="nav__item" href="#journey">Video</a></li>
+            <li class="nav__item_pl"><a class="nav__item" href="#tickets">Tickets</a></li>
+            <li class="nav__item_pl"><a class="nav__item" href="#contacts">Contacts</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
-      <section class="welcome section_dark">
+
+    <!-- ------------------------------------ welcome -->
+
+      <section class="welcome section_dark" id="welcome">
         <div class="welcome__wall">
           <div class="container">
             <div class="welcome__title section__title section__title_light">Welcome <br> to the Louvre</div>
@@ -46,7 +49,9 @@
         </div>
       </section>
 
-      <section class="visiting">
+      <!-- ------------------------------------ visiting -->
+
+      <section class="visiting" id="visiting">
         <div class="container">
           <h3 class="visiting__title section__title section__title_gold">virtual tour</h3>
 
@@ -116,7 +121,9 @@
         </div>
       </section>
 
-      <section class="explore section_dark">
+      <!-- ------------------------------------ explore -->
+
+      <section class="explore section_dark" id="explore">
         <div class="container">
           <div class="restore">
             <div class="restore__intro">
@@ -144,7 +151,9 @@
         </div>
       </section>
 
-      <section class="journey">
+      <!-- ------------------------------------ journey -->
+
+      <section class="journey" id="journey">
         <div class="container">
           
           <div class="video">
@@ -177,7 +186,7 @@
 
       <!-- ------------------------------------ tickets -->
 
-      <section class="tickets section section_dark">
+      <section class="tickets section section_dark" id="tickets">
         <div class="container">
           <h3 class="tickets__title section__title section__title_light">buy tickets</h3>
 
@@ -242,7 +251,9 @@
         </div>
       </section>
 
-      <section class="contacts section">
+      <!-- ------------------------------------ contacts -->
+
+      <section class="contacts section" id="contacts">
         <div class="container">
           
           <h3 class="contacts__title section__title section__title_gold">Contacts</h3>
@@ -265,6 +276,9 @@
         </div>
       </section>
     </main>
+
+    <!-- ------------------------------------ footer -->
+
     <footer class="footer section_dark">
       <div class="container footer__wrap">
         <div class="footer__info">
@@ -272,17 +286,16 @@
             <img src="assets/svg/louvre-logo.svg" alt="Louvre">
             <h1 class="logo__title">louvre</h1>
           </a>
-
           <nav>
             <ul class="footer__nav nav">
-              <li class="nav__item">Welcome</li>
-              <li class="nav__item">Video</li>
+              <li><a class="nav__item" href="#welcome">Welcome</a></li>
+              <li><a class="nav__item" href="#journey">Video</a></li>
 
-              <li class="nav__item">Visiting</li>
-              <li class="nav__item">Tickets</li>
+              <li><a class="nav__item" href="#visiting">Visiting</a></li>
+              <li><a class="nav__item" href="#tickets">Tickets</a></li>
 
-              <li class="nav__item">Explore</li>
-              <li class="nav__item">Contacts</li>
+              <li><a class="nav__item" href="#explore">Explore</a></li>
+              <li><a class="nav__item" href="#contacts">Contacts</a></li>
             </ul>
           </nav>
         </div>
