@@ -504,6 +504,10 @@ ul li {
   color: var(--main-bg-white);
 }
 
+.types:hover {
+  cursor: pointer;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -579,8 +583,6 @@ input[type=number] {
   font-weight: bold;
   font-size: 28px;
   line-height: 33px;
-  /* identical to box height */
-
   letter-spacing: 1.65px;
   margin-top: 26px;
   margin-bottom: 50px;
@@ -727,47 +729,39 @@ input[type=number] {
 
 */
 
-/* Styles for hiding the native radio button */
+/* hide */
 .check-custom {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+
+  /* or */
+
   position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  z-index: -1;
+  opacity: 0;
 }
 
-/* Styles for the basic appearance of the custom radio button */
+/* custom radio */
 .check-custom ~ .check-toggle {
   width: 0.7rem;
   height: 0.7rem;
+  position: relative; /* для внутренней окружности */
   margin-right: 17px;
-  position: relative;
   display: inline-block;
-  vertical-align: middle;
   border: 3px solid var(--main-bg-white);
   border-radius: 50%;
   cursor: pointer;
   vertical-align: baseline;
+  transition-property: all;
+  transition-duration: 0.8s;
 }
 
-/* Styles for the hover state appearance of the custom radio button */
-.check-custom:hover ~ .check-toggle {
-  border: 2px solid #4a4a4a;
-}
-
-/* Styles for the focus state appearance of the custom radio button */
-.check-custom:focus ~ .check-toggle {
-  border-color: #b0d5ff;
-  box-shadow: 0 0 0 2px rgba(23, 133, 255, 0.25);
-}
-
-/* Styles for the checked state appearance of the custom radio button */
+/* checked */
 .check-custom:checked ~ .check-toggle {
   border: 3px solid var(--main-bg-white);
 }
 
-/* Styles for the checked state appearance of the custom radio button */
 .check-custom:checked ~ .check-toggle::after {
   content: '';
   top: 0;
@@ -780,4 +774,29 @@ input[type=number] {
   position: absolute;
   border-radius: 50%;
   background: var(--main-bg-white);
+  transition-property: all;
+  transition-duration: 0.8s;
 }
+
+/* hover */
+.check-custom:hover ~ .check-toggle {
+  border: 3px solid var(--main-bg-gold);
+}
+
+.check-custom:hover ~ .check-toggle::after {
+  background: var(--main-bg-gold);
+}
+
+/* focus */
+.check-custom:focus ~ .check-toggle {
+  /* TO-DO */
+}
+
+/* disabled */
+.check-custom:disabled ~ .check-toggle {
+  /* TO-DO */
+}
+
+/* https://itchief.ru/html-and-css/styling-checkbox-and-radio */
+
+/* https://hackernoon.com/hacking-custom-checkboxes-and-radios-5d48230440d */
