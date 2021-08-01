@@ -3,6 +3,10 @@
   src: url(assets/fonts/Forum-Regular.ttf);
 }
 
+body {
+  box-sizing: border-box;
+}
+
 ul li {
   display: inline;
   list-style-type: none;
@@ -20,16 +24,14 @@ ul li {
   --main-font-size-md: 28px;
   --main-font-size-sm: 22px;
   --main-font-size-xs: 18px;
+  --main-space-size: 75px;
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
-}
-
-.section {
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: var(--main-space-size);
+  padding-bottom: var(--main-space-size);
 }
 
 .section_dark {
@@ -40,20 +42,21 @@ ul li {
   color: var(--main-bg-white);
 }
 
-/* ========================= page-header */
+/*
 
-.page-header {
-  padding: 74px 0;
-}
+  ------------------------------------ header
+
+*/
 
 .head {
   display: flex;
   justify-content: space-between;
 }
 
-.head__logo {
+.logo {
   display: flex;
   align-items: baseline;
+  column-gap: 20px;
 }
 
 .head__nav {
@@ -61,8 +64,7 @@ ul li {
   align-items: center;
 }
 
-.head__title {
-  /* padding-left: 20px; */
+.logo__title {
   column-gap: 20px;
   font-family: var(--main-font-secondary);
   font-weight: normal;
@@ -74,7 +76,6 @@ ul li {
 }
 
 .nav__item {
-  padding-left: 76px;
   font-family: var(--main-font-primary);
   font-size: var(--main-font-size-sm);
   font-weight: 100;
@@ -83,7 +84,15 @@ ul li {
   letter-spacing: 2px;
 }
 
-/* ========================= welcome */
+.nav__item_pl {
+  padding-left: 76px;
+}
+
+/*
+
+  ------------------------------------ welcome
+
+*/
 
 .welcome__wall {
   max-width: 1920px;
@@ -95,8 +104,8 @@ ul li {
   background-size: 1215px;
 }
 
-.welcome__block {
-  padding-top: 115px;
+.welcome__title {
+  padding-top: 40px;
   padding-bottom: 28px;
 }
 
@@ -117,6 +126,7 @@ ul li {
 }
 
 .welcome__more {
+  margin-bottom: 75px;
   font-family: var(--main-font-primary);
   font-size: var(--main-font-size-md);
   font-weight: 300;
@@ -125,25 +135,51 @@ ul li {
   letter-spacing: 2px;
 }
 
-/* ========================= visiting */
-
-.visiting {
-  padding-bottom: 75px;
+.welcome__href {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 360px;
+  height: 75px;
+  background-color: var(--main-color-dark-red);
+  color: var(--main-bg-white);
+  font-family: var(--main-font-primary);
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  border-radius: 10px;
 }
 
-.visiting__section {
-  padding-top: 76px;
-  padding-bottom: 25px;
-  border-bottom: 3px solid var(--main-color-dark-red);
+/*
+
+  ------------------------------------ visiting
+
+*/
+
+.visiting__title {
+  padding-bottom: 26px;
+}
+
+.section__underline {
+  position: relative;
+  margin-bottom: 78px;
+}
+
+.section__underline::after {
+  content: '';
+  position: absolute;
+  background-color: var(--main-color-dark-red);
+  height: 3px;
+  width: 100%;
 }
 
 .visiting__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* column-gap: 60px; */
-  row-gap: 78px;
-  padding-top: 75px;
+  row-gap: 75px;
 }
 
 .visiting__item {
@@ -161,12 +197,14 @@ ul li {
 
 .visiting__block {
   padding-top: 25px;
+  padding-bottom: 7px;
 }
 
 .visiting__how {
-  padding-top: 21px;
+  padding-top: 13px;
   font-family: var(--main-font-primary);
   font-size: var(--main-font-size-sm);
+  font-weight: 100;
   line-height: 26px;
   color: var(--main-bg-dark);
 }
@@ -175,24 +213,36 @@ ul li {
   padding-top: 10px;
   font-family: var(--main-font-primary);
   font-size: var(--main-font-size-xs);
+  font-weight: 100;
   line-height: 21px;
   color: var(--main-bg-dark);
 }
 
-/* ========================= explore */
-
-.explore {
-  padding-bottom: 75px;
+.visiting__underline {
+  position: relative;
 }
+
+.visiting__underline::after {
+  content: '';
+  position: absolute;
+  background-color: var(--main-color-dark-red);
+  height: 2px;
+  width: 68%;
+}
+
+/*
+
+  ------------------------------------ explore
+
+*/
 
 .restore {
   display: flex;
-  padding-top: 75px;
   column-gap: 61px;
 }
 
 .explore__title {
-  margin-bottom: 103px;
+  padding-bottom: 25px;
 }
 
 .explore__info {
@@ -208,16 +258,15 @@ ul li {
   padding-top: 12px;
 }
 
-/* ========================= journey */
+/*
 
-.journey {
-  padding-top: 90px;
-  padding-bottom: 75px;
-}
+  ------------------------------------ journey
+
+*/
 
 .journey__intro {
   display: flex;
-  padding-top: 120px;
+  margin-top: 40px;
 }
 
 .journey__info {
@@ -233,25 +282,421 @@ ul li {
   flex-basis: 50%;
 }
 
-/* ========================= tickets */
+.video {
+  margin-top: 15px;
+}
+
+.video__settings {
+  padding: 26px 41px 24px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+}
+
+.video__btn {
+  background-repeat: no-repeat;
+  width: 38px;
+  height: 38px;
+  background-color: transparent;
+  border: none;
+}
+
+.video__prev {
+  width: 27px;
+  height: 30px;
+  background-image: url(./assets/svg/prev.svg);
+}
+
+.video__pause {
+  width: 23px;
+  height: 30px;
+  background-image: url(./assets/svg/pause.svg);
+}
+
+.video__next {
+  width: 27px;
+  height: 30px;
+  background-image: url(./assets/svg/next.svg);
+}
+
+.video__voice {
+  align-self: center;
+  width: 38px;
+  height: 30px;
+  background-image: url(./assets/svg/voice.svg);
+}
+
+.video__full {
+  width: 36px;
+  height: 36px;
+  background-image: url(./assets/svg/full.svg);
+}
+
+.video__state {
+  display: flex;
+  column-gap: 41px;
+}
+
+.voice {
+  display: flex;
+  column-gap: 20px;
+}
+
+.voice-range {
+  width: 155px;
+}
+
+.state-range {
+  width: 60%;
+}
+
+.range {
+  align-self: center;
+  border-radius: 0;
+  height: 8px;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+}
+
+.voice-range {
+  background: linear-gradient(to right, #24809e 0%, #24809e 40%, #c4c4c4 40%, #c4c4c4 100%);
+}
+
+.state-range {
+  background: linear-gradient(to right, #24809e 0%, #24809e 48%, #c4c4c4 40%, #c4c4c4 100%);
+}
+
+.range::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  background: #c4c4c4;
+}
+
+.video-mock {
+  width: 100%;
+  display: block;
+}
+
+.video-m {
+  position: relative;
+}
+
+.video-m1 {
+  bottom: 0;
+  position: absolute;
+  background-image: url(./assets/svg/pause-big.svg);
+  width: 220px;
+  height: 220px;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+/*
+
+  ------------------------------------ tickets
+
+*/
 
 .tickets__wrap {
   display: flex;
+  column-gap: 60px;
   color: white;
 }
 
 .tickets__order {
-  display: flex;
-  flex-basis: 100%;
+  /* display: flex; */
+  /* flex-basis: 100%; */
   justify-content: space-between;
 }
 
 .tickets__title {
-  margin-bottom: 104px;
+  padding-bottom: 27px;
 }
 
-/* ========================= contacts */
+.tickets__step {
+  font-family: var(--main-font-primary);
+  font-weight: bold;
+  font-size: var(--main-font-size-md);
+  line-height: 33px;
+  color: var(--main-bg-white);
+}
+
+.tickets__step_amount {
+  text-align: right;
+}
+
+.types {
+  padding-top: 49px;
+  display: block;
+  font-family: var(--main-font-primary);
+  font-size: var(--main-font-size-sm);
+  font-weight: 300;
+  line-height: 26px;
+  color: var(--main-bg-white);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.amount-wrap {
+  display: flex;
+  justify-content: space-between;
+  border: 4px solid var(--main-bg-white);
+}
+
+.amount-wrap__input {
+  text-align: center;
+  background-color: transparent;
+  color: var(--main-bg-white);
+  border: none;
+}
+
+.amount-wrap__btn {
+  background-color: transparent;
+  color: var(--main-bg-white);
+  border: none;
+}
+
+.amount-wrap__item {
+  font-family: var(--main-font-primary);
+  font-weight: 300;
+  color: var(--main-bg-white);
+}
+
+.amount-wrap__btn {
+  font-size: 32px;
+  line-height: 37px;
+}
+
+.amount-wrap__input {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.amount-wrap__btn {
+  padding: 2px 12px;
+}
+
+.amount-wrap__input {
+  /* padding-left: 6px;
+  padding-right: 6px; */
+}
+
+.age {
+  margin-bottom: 14px;
+}
+
+.types.tickets__item {
+  padding-top: 11px;
+  margin-bottom: 25px;
+  align-self: flex-end;
+}
+
+.tickets__step_total {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  /* identical to box height */
+
+  letter-spacing: 1.65px;
+  margin-top: 26px;
+  margin-bottom: 50px;
+}
+
+.tickets__btn {
+  padding: 12px 37px;
+  border: none;
+  font-family: var(--main-font-primary);
+  font-weight: 300;
+  font-size: var(--main-font-size-sm);
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: var(--main-bg-dark);
+  border-radius: 2px;
+}
+
+.wrap11 {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
+}
+
+.tickets__amount {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+
+  ------------------------------------ contacts
+
+*/
+
+.contacts__title {
+  padding-bottom: 24px;
+}
 
 .contacts__wrap {
   display: flex;
+  justify-content: space-between;
+}
+
+.contacts__name {
+  padding-top: 13px;
+  padding-bottom: 38px;
+  font-family: var(--main-font-primary);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: var(--main-font-size-l);
+  color: var(--main-bg-dark);
+}
+
+.contacts__item {
+  padding-bottom: 20px;
+  font-family: var(--main-font-primary);
+  font-weight: 300;
+  font-size: var(--main-font-size-sm);
+  line-height: 26px;
+  color: var(--main-bg-dark);
+}
+
+/*
+
+  ------------------------------------ footer
+
+*/
+
+.footer__info {
+  display: flex;
+  column-gap: 145px;
+}
+
+.footer__nav {
+  display: grid;
+  grid-template-columns: 260px 260px;
+}
+
+.icon {
+  display: block;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 10.5px;
+  background-position: center;
+}
+
+.icon-youtube {
+  background-image: url(./assets/svg/youtube.svg);
+}
+
+.icon-instagram {
+  background-image: url(./assets/svg/instagram.svg);
+}
+
+.icon-facebook {
+  background-image: url(./assets/svg/facebook.svg);
+}
+
+.icon-twitter {
+  background-image: url(./assets/svg/twitter.svg);
+}
+
+.icon-pin {
+  background-image: url(./assets/svg/pinterest.svg);
+}
+
+.footer__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  column-gap: 24px;
+  align-self: flex-end;
+  margin-bottom: 14px;
+}
+
+/*
+
+  ------------------------------------ custom
+
+*/
+
+/* Styles for hiding the native radio button */
+.check-custom {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Styles for the basic appearance of the custom radio button */
+.check-custom ~ .check-toggle {
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 17px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border: 3px solid var(--main-bg-white);
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+
+/* Styles for the hover state appearance of the custom radio button */
+.check-custom:hover ~ .check-toggle {
+  border: 2px solid #4a4a4a;
+}
+
+/* Styles for the focus state appearance of the custom radio button */
+.check-custom:focus ~ .check-toggle {
+  border-color: #b0d5ff;
+  box-shadow: 0 0 0 2px rgba(23, 133, 255, 0.25);
+}
+
+/* Styles for the checked state appearance of the custom radio button */
+.check-custom:checked ~ .check-toggle {
+  border: 3px solid var(--main-bg-white);
+}
+
+/* Styles for the checked state appearance of the custom radio button */
+.check-custom:checked ~ .check-toggle::after {
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--main-bg-white);
 }
