@@ -29,6 +29,7 @@ ul li {
   --main-font-size-sm: 22px;
   --main-font-size-xs: 18px;
   --main-space-size: 75px;
+  --main-filter-gold: invert(57%) sepia(9%) saturate(1301%) hue-rotate(356deg) brightness(94%) contrast(87%);
 }
 
 .container {
@@ -74,7 +75,7 @@ ul li {
 }
 
 .logo:hover > img {
-  filter: brightness(50%);
+  filter: var(--main-filter-gold);
 }
 
 .logo:hover > .logo__title {
@@ -173,12 +174,9 @@ ul li {
 }
 
 .welcome__href {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   box-sizing: border-box;
-  width: 360px;
-  height: 75px;
+  padding: 24px 68px;
   background-color: var(--main-color-dark-red);
   color: var(--main-bg-white);
   font-family: var(--main-font-primary);
@@ -361,7 +359,7 @@ ul li {
 .video__btn:hover,
 .video-m1:hover {
   cursor: pointer;
-  filter: brightness(50%);
+  filter: var(--main-filter-gold);
 }
 
 .video__prev {
@@ -436,7 +434,7 @@ ul li {
   border-radius: 50%;
   -webkit-appearance: none;
   cursor: ew-resize;
-  background: #c4c4c4;
+  background: var(--main-bg-white);
 }
 
 .video-mock {
@@ -511,6 +509,11 @@ ul li {
 
 .types:hover {
   cursor: pointer;
+}
+
+.tickets__type {
+  padding-top: 0;
+  margin-top: 49px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -693,7 +696,7 @@ input[type=number] {
 }
 
 .icon:hover {
-  filter: brightness(50%);
+  filter: var(--main-filter-gold);
 }
 
 .icon-youtube {
@@ -805,3 +808,5 @@ input[type=number] {
 /* https://itchief.ru/html-and-css/styling-checkbox-and-radio */
 
 /* https://hackernoon.com/hacking-custom-checkboxes-and-radios-5d48230440d */
+
+/* https://pranjaldubey.com/css-filter-generator/ */
