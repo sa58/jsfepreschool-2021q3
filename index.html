@@ -6,23 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <title>slider</title>
 </head>
 <body>
   <div class="container">
-    
-    <div class="slider">
-      <div class="slide1"></div>
-      <div class="slide2"></div>
-      <div class="slide3"></div>
-      <div class="slide4"></div>
+    <div class="slider-left">
+      <div class="wrapper">
+        <div class="slides">
+          <span class="slide"></span>
+          <span class="slide"></span>
+          <span class="slide"></span>
+          <span class="slide"></span>
+        </div>
+      </div>
     </div>
 
-    <div class="buttons">
-      <button class="btn-up">Up</button>
-      <button class="btn-down">Down</button>
+    <div class="slider-right">
+      <div class="wrapper">
+        <div class="slides">
+          <span class="slide">sun</span>
+          <span class="slide">forest</span>
+          <span class="slide">sky</span>
+          <span class="slide">sea</span>
+        </div>
+      </div>
     </div>
+
+    <div class="action-buttons">
+      <button class="next"></button>
+      <button class="prev"></button>
+    </div>
+
   </div>
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

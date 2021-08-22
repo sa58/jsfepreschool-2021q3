@@ -1,30 +1,104 @@
-const btnDown = document.querySelector('.btn-down');
-const btnUp = document.querySelector('.btn-up');
+let sliderLeft = document.querySelector('.slider-left');
+let sliderLeftItems = sliderLeft.querySelector('.slides');
 
-const sliderContainer = document.querySelector('.slider');
-const slidesCount = sliderContainer.querySelectorAll('div');
+let sliderRigth = document.querySelector('.slider-right');
+let sliderRightItems = sliderRigth.querySelector('.slides');
 
-let activeSlideIndex = 0;
+let prev = document.querySelector('.prev');
+let next = document.querySelector('.next');
 
-btnDown.addEventListener('click', () => {
-  changeSlides();
-})
+function slide(wrapper, items, prev, next) {
+  let posInitial;
+  let slides = items.getElementsByClassName('slide');
+  let slidesLength = slides.length;
+  let slideSize = slides[0].offsetHeight;
+  let firstSlide = slides[0];
+  let lastSlide = slides[slidesLength - 1];
+  let cloneFirst = firstSlide.cloneNode(true);
+  let cloneLast = lastSlide.cloneNode(true);
+  let index = 0;
+  let allowShift = true;
 
-btnUp.addEventListener('click', () => {
-  changeSlides();
-})
+  // Clone first and last slide
+  items.appendChild(cloneFirst);
+  items.insertBefore(cloneLast, firstSlide);
+  wrapper.classList.add('loaded');
 
-const changeSlides = () => {
-  activeSlideIndex++;
+  document.addEventListener('wheel', (event) => {
+    if(event.deltaY > 0) {
+      if(wrapper.classList.contains('slider-right')) {
+        shiftSlide(1);
+      } else {
+        shiftSlide(-1);
+      }
+    }
 
-  const height = sliderContainer.clientHeight;
+    if(event.deltaY < 0) {
+      if(wrapper.classList.contains('slider-right')) {
+        shiftSlide(-1);
+      } else {
+        shiftSlide(1);
+      }
+    }
+  });
 
-  console.log(activeSlideIndex, height)
 
-  if(activeSlideIndex === 4) {
-    sliderContainer.style.transform = `translateY(${0}px)`;
-    activeSlideIndex = 0;
-  } else {
-    sliderContainer.style.transform = `translateY(${-height * activeSlideIndex}px)`;
+  // Click events
+  prev.addEventListener('click', function() {
+    if(wrapper.classList.contains('slider-right')) {
+      shiftSlide(1);
+    } else {
+      shiftSlide(-1);
+    }
+  });
+
+  next.addEventListener('click', function() {
+    if(wrapper.classList.contains('slider-right')) {
+      shiftSlide(-1);
+    } else {
+      shiftSlide(1);
+    }
+  });
+
+  // Transition events
+  items.addEventListener('transitionend', checkIndex);
+
+  function shiftSlide(dir, action) {
+    items.classList.add('shifting');
+
+    if(allowShift) {
+      if(!action) {
+        posInitial = items.offsetTop;
+      }
+
+      if (dir == 1) {
+        items.style.top = posInitial - slideSize + 'px';
+        index++;
+      } else if (dir == -1) {
+        items.style.top = posInitial + slideSize + 'px';
+        index--;
+      }
+    }
+
+    allowShift = false;
+  }
+
+  function checkIndex() {
+    items.classList.remove('shifting');
+
+    if (index == -1) {
+      items.style.top = -(slidesLength * slideSize) + 'px';
+      index = slidesLength - 1;
+    }
+
+    if (index == slidesLength) {
+      items.style.top = -(1 * slideSize) + 'px';
+      index = 0;
+    }
+
+    allowShift = true;
   }
 }
+
+slide(sliderLeft, sliderLeftItems, prev, next);
+slide(sliderRigth, sliderRightItems, prev, next);
