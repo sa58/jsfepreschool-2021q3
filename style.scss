@@ -11,7 +11,6 @@ body {
   color: #333;
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  // font-size: 22px;
 }
 
 .slider-left {
@@ -110,6 +109,10 @@ body {
   text-transform: uppercase;
 }
 
+.action {
+  font-size: small;
+}
+
 .slider-right .wrapper {
   width: $slider-left-width;
 }
@@ -131,7 +134,7 @@ body {
 
 .prev {
   background-image: url(./assets/arrow-white-right.svg);
-  transform: rotate(90deg) translateX(200%);
+  transform: rotate(90deg) translateX(250%);
 }
 
 .next {

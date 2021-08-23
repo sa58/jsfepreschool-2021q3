@@ -7,6 +7,9 @@ let sliderRightItems = sliderRigth.querySelector('.slides');
 let prev = document.querySelector('.prev');
 let next = document.querySelector('.next');
 
+const up = -1;
+const down = 1;
+
 function slide(wrapper, items, prev, next) {
   let posInitial;
   let slides = items.getElementsByClassName('slide');
@@ -24,58 +27,49 @@ function slide(wrapper, items, prev, next) {
   items.insertBefore(cloneLast, firstSlide);
   wrapper.classList.add('loaded');
 
+  const formDirections = (dir1, dir2) => {
+    if(wrapper.classList.contains('slider-right')) {
+      shiftSlide(dir1);
+    } else {
+      shiftSlide(dir2);
+    }
+  }
+
   document.addEventListener('wheel', (event) => {
     if(event.deltaY > 0) {
-      if(wrapper.classList.contains('slider-right')) {
-        shiftSlide(1);
-      } else {
-        shiftSlide(-1);
-      }
+      formDirections(down, up);
     }
 
     if(event.deltaY < 0) {
-      if(wrapper.classList.contains('slider-right')) {
-        shiftSlide(-1);
-      } else {
-        shiftSlide(1);
-      }
+      formDirections(up, down);
     }
   });
-
 
   // Click events
   prev.addEventListener('click', function() {
-    if(wrapper.classList.contains('slider-right')) {
-      shiftSlide(1);
-    } else {
-      shiftSlide(-1);
-    }
+    formDirections(down, up);
   });
 
   next.addEventListener('click', function() {
-    if(wrapper.classList.contains('slider-right')) {
-      shiftSlide(-1);
-    } else {
-      shiftSlide(1);
-    }
+    formDirections(up, down);
   });
 
   // Transition events
   items.addEventListener('transitionend', checkIndex);
 
-  function shiftSlide(dir, action) {
+  function shiftSlide(dir) {
     items.classList.add('shifting');
 
     if(allowShift) {
-      if(!action) {
-        posInitial = items.offsetTop;
-      }
+      posInitial = items.offsetTop;
 
-      if (dir == 1) {
-        items.style.top = posInitial - slideSize + 'px';
+      if(dir == 1) {
+        items.style.top = `${posInitial - slideSize}px`;
         index++;
-      } else if (dir == -1) {
-        items.style.top = posInitial + slideSize + 'px';
+      } 
+
+      if(dir == -1) {
+        items.style.top = `${posInitial + slideSize}px`;
         index--;
       }
     }
@@ -86,13 +80,13 @@ function slide(wrapper, items, prev, next) {
   function checkIndex() {
     items.classList.remove('shifting');
 
-    if (index == -1) {
-      items.style.top = -(slidesLength * slideSize) + 'px';
+    if(index == -1) {
+      items.style.top = `${-(slidesLength * slideSize)}px`;
       index = slidesLength - 1;
     }
 
-    if (index == slidesLength) {
-      items.style.top = -(1 * slideSize) + 'px';
+    if(index == slidesLength) {
+      items.style.top = `${-(1 * slideSize)}px`;
       index = 0;
     }
 
