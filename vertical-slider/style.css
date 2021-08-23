@@ -95,6 +95,10 @@ body {
   text-transform: uppercase;
 }
 
+.action {
+  font-size: small;
+}
+
 .slider-right .wrapper {
   width: 30vw;
 }
@@ -116,7 +120,7 @@ body {
 
 .prev {
   background-image: url(./assets/arrow-white-right.svg);
-  transform: rotate(90deg) translateX(200%);
+  transform: rotate(90deg) translateX(250%);
 }
 
 .next {
