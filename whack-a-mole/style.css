@@ -1,0 +1,97 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background: #03a9f4;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: inherit;
+  font-family: 'Patrick Hand', sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.wrap {
+  position: absolute;
+  display: flex;
+  color: #eee;
+  column-gap: 30px;
+  right: 0;
+  padding: 0 24px;
+  font-size: xx-large;
+}
+
+.balloon {
+  background: url(./assets/balloon.png) bottom center no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 90px;
+  height: 240px;
+  transition: all 0.4s;
+  cursor: pointer;
+  bottom: -256px;
+}
+
+.init {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #2f54eb;
+  position: absolute;
+  width: 420px;
+  height: 470px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  box-shadow: rgb(0 0 0 / 10%) 0 0 5px 0, rgb(0 0 0 / 10%) 0 0 1px 0;
+  border-radius: 4px;
+  z-index: 10;
+  padding: 24px;
+  color: #eee;
+  font-size: 2rem;
+}
+
+.invisible {
+  display: none;
+}
+
+.start {
+  background-color: #531dab;
+  border: none;
+  color: #eee;
+  padding: 8px 24px;
+  font-size: 18px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: rgb(0 0 0 / 10%) 0 0 5px 0, rgb(0 0 0 / 10%) 0 0 1px 0;
+  transition: background-color 0.5s;
+}
+
+.start:hover {
+  background-color: #391085;
+}
+
+.level-stat,
+.score-stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.inactive {
+  pointer-events: none;
+}
