@@ -21,6 +21,9 @@ let livesCount = 3;
 
 let intervalLevel = 5000;
 
+// TODO: compute this value
+let balloonWidth = 90
+
 const nameStore = 'whack-a-balloon';
 
 function initGame() {
@@ -65,16 +68,32 @@ function resetStats() {
 }
 
 function randomTime(min, max) {
-  // TODO
-  return Math.round(Math.random() * (max - min) + min);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function getRandomLeftPos() {
   let min = 0;
   let max = document.documentElement.clientWidth;
 
-  // TODO
-  return Math.round(Math.random() * (max - min) + min);
+  let rand = Math.floor(Math.random() * (max - min + 1));
+
+  if(max - rand < balloonWidth) {
+    let min1  = balloonWidth - (max - rand);
+    let max1 = balloonWidth;
+
+    // balloons on the right appear more than on the left
+    let randRightPos = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+    let leftOrRight = Math.floor(Math.random() * 2);
+
+    // generally balance is recovered
+    if(leftOrRight) {
+      rand = rand - randRightPos;
+    } else {
+      rand = max - (max - (max - rand));
+    }
+  }
+
+  return rand;
 }
 
 function startGame() {
@@ -91,14 +110,12 @@ function startGame() {
       finish = true;
       clearInterval(timerID);
     } else {
-      levelCount++;
-      setText(levelBoard, levelCount);
-
       if(levelTime !== 100) {
+        levelCount++;
+        setText(levelBoard, levelCount);
         levelTime = levelTime - 50;
       }
     }
-
   }, intervalLevel)
 }
 
@@ -112,12 +129,12 @@ function finishGame() {
   setText(levelLast, levelCount);
   setText(scoreLast, scoreCount);
 
-  const score1 = {
+  const newScore = {
     best: {level: best.level, score: best.score},
     last: {level: levelCount, score: scoreCount}
   };
 
-  localStorage.setItem(nameStore, JSON.stringify(score1));
+  localStorage.setItem(nameStore, JSON.stringify(newScore));
 
   board.classList.add('inactive');
   init.classList.remove('invisible');
@@ -195,6 +212,7 @@ function showBalloons() {
       }
     }
 
+    // TODO
     if(livesCount === 0) {
       cancelAnimationFrame(animationID);
       finishGame();
