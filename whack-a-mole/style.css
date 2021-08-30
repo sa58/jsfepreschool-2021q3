@@ -1,73 +1,71 @@
-html {
-  box-sizing: border-box;
-  font-size: 10px;
-  background: #03a9f4;
-  overflow: hidden;
-}
+/* TODO: переменные */
 
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
   font-family: 'Patrick Hand', sans-serif;
+}
+
+html {
+  font-size: 10px;
 }
 
 body {
   padding: 0;
   margin: 0;
+  overflow: hidden;
+  background: #03a9f4;
 }
 
-.wrap {
+.game-panel {
   position: absolute;
-  display: flex;
-  color: #eee;
-  column-gap: 30px;
   right: 0;
+  display: flex;
+  column-gap: 30px;
   padding: 0 24px;
   font-size: xx-large;
+  color: #eee;
 }
 
 .balloon {
-  background: url(./assets/balloon.png) bottom center no-repeat;
-  background-size: contain;
   position: absolute;
+  bottom: -256px;
   width: 90px;
   height: 240px;
-  transition: all 0.4s;
   cursor: pointer;
-  bottom: -256px;
+  background-image: url(./assets/balloon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 0.4s;
 }
 
 .init {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  width: 420px;
+  height: 470px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #2f54eb;
-  position: absolute;
-  width: 420px;
-  height: 470px;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  box-shadow: rgb(0 0 0 / 10%) 0 0 5px 0, rgb(0 0 0 / 10%) 0 0 1px 0;
-  border-radius: 4px;
-  z-index: 10;
   padding: 24px;
-  color: #eee;
   font-size: 2rem;
-}
-
-.invisible {
-  display: none;
+  color: #eee;
+  background-color: #2f54eb;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 10%) 0 0 5px 0, rgb(0 0 0 / 10%) 0 0 1px 0;
+  transform: translate(-50%, -50%);
 }
 
 .start {
+  padding: 8px 24px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #eee;
   background-color: #531dab;
   border: none;
-  color: #eee;
-  padding: 8px 24px;
-  font-size: 18px;
   border-radius: 4px;
   outline: none;
-  cursor: pointer;
   box-shadow: rgb(0 0 0 / 10%) 0 0 5px 0, rgb(0 0 0 / 10%) 0 0 1px 0;
   transition: background-color 0.5s;
 }
@@ -83,17 +81,21 @@ body {
 }
 
 .name {
-  font-weight: bold;
   margin-bottom: 12px;
+  font-weight: bold;
 }
 
 h2 {
-  text-align: center;
   margin: 0;
+  text-align: center;
 }
 
 .inactive {
   pointer-events: none;
+}
+
+.invisible {
+  display: none;
 }
 
 .goal {
