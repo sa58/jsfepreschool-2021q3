@@ -95,3 +95,7 @@ h2 {
 .inactive {
   pointer-events: none;
 }
+
+.goal {
+  font-size: small;
+}
