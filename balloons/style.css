@@ -1,0 +1,103 @@
+/* TODO: переменные */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Patrick Hand', sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #03a9f4;
+}
+
+.game-panel {
+  position: absolute;
+  right: 0;
+  display: flex;
+  column-gap: 30px;
+  padding: 0 24px;
+  font-size: xx-large;
+  color: #eee;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -256px;
+  width: 90px;
+  height: 240px;
+  cursor: pointer;
+  background-image: url(./assets/balloon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 0.4s;
+}
+
+.init {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  width: 420px;
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  font-size: 2rem;
+  color: #eee;
+  background-color: #2f54eb;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 10%) 0 0 5px 0, rgb(0 0 0 / 10%) 0 0 1px 0;
+  transform: translate(-50%, -50%);
+}
+
+.start {
+  padding: 8px 24px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #eee;
+  background-color: #531dab;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: rgb(0 0 0 / 10%) 0 0 5px 0, rgb(0 0 0 / 10%) 0 0 1px 0;
+  transition: background-color 0.5s;
+}
+
+.start:hover {
+  background-color: #391085;
+}
+
+.level-stat,
+.score-stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.inactive {
+  pointer-events: none;
+}
+
+.invisible {
+  display: none;
+}
+
+.goal {
+  font-size: small;
+}

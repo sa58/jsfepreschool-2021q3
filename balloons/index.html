@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <script src="https://js.cx/libs/animate.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="init">
+    <h2>Hello!</h2>
+    <div>
+      <div class="name">Best result:</div>
+      <div class="level-stat">
+        <div>Level</div>
+        <div class="best-level"></div>
+      </div>
+      <div class="score-stat">
+        <div>Score</div>
+        <div class="best-score"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="name">Last result:</div>
+      <div class="level-stat">
+        <div>Level</div>
+        <div class="last-level"></div>
+      </div>
+      <div class="score-stat">
+        <div>Score</div>
+        <div class="last-score"></div>
+      </div>
+    </div>
+
+    <div class="goal">Your goal is to whack as many balloons as possible at the maximum level</div>
+
+
+    <button onclick="startGame()" class="start" >New game</button>
+  </div>
+
+  <div class="game invisible">
+    <div class="game-panel">
+      <div>Score: <span class="score">0</span></div>
+      <div>Level: <span class="level">0</span></div>
+      <div>Lives: <span class="lives">0</span></div>
+    </div>
+
+    <div class="board"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
